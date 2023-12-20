@@ -1,0 +1,16 @@
+There are many ways you can push for the results. This is CLI way:
+
+STEPS: 1. download the latest jmeter version
+
+Extract in your desired directory. For example, extract to /tmp/
+Now, default output file format will be csv. No need to change anything or specify in the CLI command.
+Save jmx file from UI console. Say, you have saved on examples directory for example:
+Now, Run the command from CLI console: jmeter -n -t examples/test.jmx -l examples/output.csv
+#
+Now, if you want to change the default format, check the following parameter in jmeter.properties file: jmeter.save.saveservice.output_format=xml
+
+Now if you run the command, ./jmeter -n -t examples/test.jmx -l examples/output.jtl output get stored in xml format.
+
+Now, make the request on multiple server(Additional info query for good knowledge): We can specify host and port as argument/tags in CLI command
+
+./jmeter -n -t examples/test.jmx -l examples/output.csv -JHOST=<HOST> -JPORT=<PORT>
